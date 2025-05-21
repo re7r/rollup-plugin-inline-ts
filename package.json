@@ -1,0 +1,94 @@
+{
+  "name": "rollup-plugin-inline-ts",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.0",
+  "description": "A Rollup plugin to process TypeScript code inside <script lang=\"ts\"> tags.",
+  "type": "module",
+  "keywords": [
+    "rollup-plugin",
+    "compile",
+    "transpile",
+    "typescript",
+    "embeded",
+    "inline",
+    "html",
+    "templates"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/re7r/rollup-plugin-inline-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re7r/rollup-plugin-inline-ts"
+  },
+  "author": "Re7r <re7r@proton.me>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.0.0",
+    "esbuild": "^0.0.0",
+    "oxc-transform": "^0.0.0",
+    "rollup": "^1.0.0||^2.0.0||^3.0.0||^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@swc/core": {
+      "optional": true
+    },
+    "esbuild": {
+      "optional": true
+    },
+    "oxc-transform": {
+      "optional": true
+    },
+    "rollup": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@release-it/bumper": "^7.0.5",
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@swc/core": "^1.11.24",
+    "@sxzz/eslint-config": "^7.0.1",
+    "@sxzz/prettier-config": "^2.2.1",
+    "@types/node": "^22.15.20",
+    "bumpp": "^10.1.1",
+    "esbuild": "^0.25.4",
+    "eslint": "^9.27.0",
+    "eslint-plugin-jsdoc": "^50.6.17",
+    "oxc-transform": "^0.71.0",
+    "prettier": "^3.5.3",
+    "release-it": "^19.0.2",
+    "rollup": "^4.41.0",
+    "tsdown": "^0.11.12",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": "^v22"
+  }
+}

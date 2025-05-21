@@ -1,0 +1,11 @@
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+end_of_line = lf
+
+[README.md]
+max_line_length = 140
+

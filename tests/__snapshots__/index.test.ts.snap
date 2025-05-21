@@ -1,0 +1,185 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`inlineTs engine: esbuild > processes HTML with engine=esbuild > esbuild file contents 1`] = `
+{
+  "example.html": "<html>
+  <head>
+    <script>
+      const v = 'var';
+      console.log('native-html-js', v);
+    </script>
+    <script >
+const s = "str";
+console.log("compiled-html-js", s);
+
+</script>
+  </head>
+  <body>
+    Hello
+
+    <script >
+const s1 = "str-1";
+console.log("compiled-html-js-1", s);
+
+</script>
+  </body>
+</html>
+",
+  "example.xht": "<script >
+const s = "hello";
+console.log("compiled-xht-js", s);
+
+</script>
+
+<div>Hello</div>
+",
+  "main.js": "console.log('hello');
+",
+}
+`;
+
+exports[`inlineTs engine: esbuild > processes HTML with engine=esbuild > esbuild file list 1`] = `
+[
+  "example.html",
+  "example.xht",
+  "main.js",
+]
+`;
+
+exports[`inlineTs engine: oxc > processes HTML with engine=oxc > oxc file contents 1`] = `
+{
+  "example.html": "<html>
+  <head>
+    <script>
+      const v = 'var';
+      console.log('native-html-js', v);
+    </script>
+    <script >
+const s = "str";
+console.log("compiled-html-js", s);
+
+</script>
+  </head>
+  <body>
+    Hello
+
+    <script >
+const s1 = "str-1";
+console.log("compiled-html-js-1", s);
+
+</script>
+  </body>
+</html>
+",
+  "example.xht": "<script >
+const s = "hello";
+console.log("compiled-xht-js", s);
+
+</script>
+
+<div>Hello</div>
+",
+  "main.js": "console.log('hello');
+",
+}
+`;
+
+exports[`inlineTs engine: oxc > processes HTML with engine=oxc > oxc file list 1`] = `
+[
+  "example.html",
+  "example.xht",
+  "main.js",
+]
+`;
+
+exports[`inlineTs engine: swc > processes HTML with engine=swc > swc file contents 1`] = `
+{
+  "example.html": "<html>
+  <head>
+    <script>
+      const v = 'var';
+      console.log('native-html-js', v);
+    </script>
+    <script >
+var s = 'str';
+console.log('compiled-html-js', s);
+
+</script>
+  </head>
+  <body>
+    Hello
+
+    <script >
+var s1 = 'str-1';
+console.log('compiled-html-js-1', s);
+
+</script>
+  </body>
+</html>
+",
+  "example.xht": "<script >
+var s = 'hello';
+console.log('compiled-xht-js', s);
+
+</script>
+
+<div>Hello</div>
+",
+  "main.js": "console.log('hello');
+",
+}
+`;
+
+exports[`inlineTs engine: swc > processes HTML with engine=swc > swc file list 1`] = `
+[
+  "example.html",
+  "example.xht",
+  "main.js",
+]
+`;
+
+exports[`inlineTs engine: typescript > processes HTML with engine=typescript > typescript file contents 1`] = `
+{
+  "example.html": "<html>
+  <head>
+    <script>
+      const v = 'var';
+      console.log('native-html-js', v);
+    </script>
+    <script >
+const s = 'str';
+console.log('compiled-html-js', s);
+
+</script>
+  </head>
+  <body>
+    Hello
+
+    <script >
+const s1 = 'str-1';
+console.log('compiled-html-js-1', s);
+
+</script>
+  </body>
+</html>
+",
+  "example.xht": "<script >
+const s = 'hello';
+console.log('compiled-xht-js', s);
+
+</script>
+
+<div>Hello</div>
+",
+  "main.js": "console.log('hello');
+",
+}
+`;
+
+exports[`inlineTs engine: typescript > processes HTML with engine=typescript > typescript file list 1`] = `
+[
+  "example.html",
+  "example.xht",
+  "main.js",
+]
+`;
