@@ -76,13 +76,13 @@ export default {
   plugins: [
     // ...
     inlineTs({
-      extensions: ['html', 'xht'],                             // Files to process
-      engine: 'swc',                                           // Transpiler engine
-      options: {jsc: {parser: {syntax: 'typescript'}}},        // Engine specific options
-      tsScriptAttr: 'lang="ts"',                               // Match attribute
-      jsScriptAttr: '',                                        // Replacement attribute
-      logPrefix: '[inline-ts]',                                // Log prefix
-      debug: false,                                            // Debug logging
+      extensions: ['html', 'xht'], // Files to process
+      engine: 'swc', // Transpiler engine
+      options: { jsc: { parser: { syntax: 'typescript' } } }, // Engine specific options
+      tsScriptAttr: 'lang="ts"', // Match attribute
+      jsScriptAttr: '', // Replacement attribute
+      logPrefix: '[inline-ts]', // Log prefix
+      debug: false, // Debug logging
     }),
   ],
 };
@@ -111,7 +111,7 @@ Default: engine-specific
 Passed directly to the underlying transpiler.
 
 | Engine       | Type                                                                          | Package                                                        | Default                                         |
-|--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------|
+| ------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------- |
 | `oxc`        | [`TransformOptions`](https://oxc.rs/docs/guide/usage/transformer)             | [`oxc-transform`](https://www.npmjs.com/package/oxc-transform) | `{}`                                            |
 | `swc`        | [`Config`](https://swc.rs/docs/usage/core#transform)                          | [`@swc/core`](https://www.npmjs.com/package/@swc/core)         | `{ jsc: { parser: { syntax: 'typescript' } } }` |
 | `esbuild`    | [`TransformOptions`](https://esbuild.github.io/api/#transform)                | [`esbuild`](https://www.npmjs.com/package/esbuild)             | `{ loader: 'ts' }`                              |
