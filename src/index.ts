@@ -64,12 +64,12 @@ export type RollupInlineTsOptions = {
 type Engine = 'oxc' | 'swc' | 'esbuild' | 'typescript';
 type EngineOptions = OxcOptions | SwcOptions | EsbuildOptions | TypeScriptOptions;
 
-const OxcDefaultOptions: OxcOptions = {};
-const SwcDefaultOptions: SwcOptions = { jsc: { parser: { syntax: 'typescript' } } };
-const EsbuildDefaultOptions: EsbuildOptions = { loader: 'ts' };
-const TypeScriptDefaultOptions: TypeScriptOptions = { target: 99 };
+async function compilerFactory(engine: Engine, opts?: EngineOptions): Promise<(code: string) => string> {
+  const OxcDefaultOptions: OxcOptions = {};
+  const SwcDefaultOptions: SwcOptions = { jsc: { parser: { syntax: 'typescript' } } };
+  const EsbuildDefaultOptions: EsbuildOptions = { loader: 'ts' };
+  const TypeScriptDefaultOptions: TypeScriptOptions = { target: 99 };
 
-async function compilerFactory(engine: Engine, opts: EngineOptions): Promise<(code: string) => string> {
   if (engine == 'oxc') {
     const { transform } = await import('oxc-transform');
     return (code) => transform('_.ts', code, (opts as OxcOptions) ?? OxcDefaultOptions).code;
@@ -94,20 +94,21 @@ async function compilerFactory(engine: Engine, opts: EngineOptions): Promise<(co
  * @returns {object} Rollup plugin instance.
  */
 export default function inlineTs(options?: RollupInlineTsOptions): Plugin {
-  const config: Required<RollupInlineTsOptions> = Object.assign(
-    {
-      engine: 'oxc',
-      options: null,
-      extensions: ['.html'],
-      tsScriptAttr: 'lang="ts"',
-      jsScriptAttr: '',
-      keepComponentImports: true,
-      logPrefix: '[inline-ts]',
-      debug: false,
-    },
-    options,
-  );
+  type Config = Omit<Required<RollupInlineTsOptions>, 'options'> & {
+    options?: EngineOptions;
+  };
 
+  const defaults: Config = {
+    engine: 'oxc',
+    extensions: ['.html'],
+    tsScriptAttr: 'lang="ts"',
+    jsScriptAttr: '',
+    keepComponentImports: true,
+    logPrefix: '[inline-ts]',
+    debug: false,
+  };
+
+  const config: Config = { ...defaults, ...options };
   const logPrefix = config.logPrefix ? ` ${config.logPrefix}` : '';
   const escapedTsAttr = config.tsScriptAttr.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
   const scriptTagsRegex = new RegExp(`(<script.*?\\s+${escapedTsAttr}(?:\\s+.*?|)>)([\\s\\S]*?)<\\/script>`, 'g');

@@ -46,10 +46,10 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
-    "rollup": "^1.0.0||^2.0.0||^3.0.0||^4.0.0",
     "@swc/core": "*",
-    "oxc-transform": "*",
     "esbuild": "*",
+    "oxc-transform": "*",
+    "rollup": "^1.0.0||^2.0.0||^3.0.0||^4.0.0",
     "typescript": "*"
   },
   "peerDependenciesMeta": {
