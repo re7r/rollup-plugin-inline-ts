@@ -38,7 +38,7 @@ type RollupInlineTsOptions = {
    */
   keepComponentImports?: boolean;
   /**
-   * Prefix for log messages (default: '[rollup-plugin-inline-ts]').
+   * Prefix for log messages (default: '[inline-ts]').
    */
   logPrefix?: string;
   /**

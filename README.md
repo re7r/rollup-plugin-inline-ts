@@ -142,7 +142,7 @@ These imports will not be removed as unused during the transformation.
 ### `logPrefix`
 
 Type: `string`  
-Default: `'[rollup-plugin-inline-ts]'`
+Default: `'[inline-ts]'`
 
 Prefix for plugin logs.
 

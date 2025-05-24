@@ -46,7 +46,7 @@ export type RollupInlineTsOptions = {
   keepComponentImports?: boolean;
 
   /**
-   * Prefix for log messages (default: '[rollup-plugin-inline-ts]').
+   * Prefix for log messages (default: '[inline-ts]').
    */
   logPrefix?: string;
 
@@ -102,7 +102,7 @@ export default function inlineTs(options?: RollupInlineTsOptions): Plugin {
       tsScriptAttr: 'lang="ts"',
       jsScriptAttr: '',
       keepComponentImports: true,
-      logPrefix: '[rollup-plugin-inline-ts]',
+      logPrefix: '[inline-ts]',
       debug: false,
     },
     options,
