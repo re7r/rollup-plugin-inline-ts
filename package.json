@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-inline-ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "packageManager": "pnpm@10.11.0",
   "description": "A Rollup plugin to process TypeScript code inside <script lang=\"ts\"> tags.",
   "type": "module",
