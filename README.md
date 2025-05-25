@@ -76,7 +76,7 @@ export default {
   plugins: [
     // ...
     inlineTs({
-      extensions: ['html', 'xht'], // Files to process
+      extensions: ['.html', '.xht'], // Files to process
       engine: 'swc', // Transpiler engine
       options: { jsc: { parser: { syntax: 'typescript' } } }, // Engine specific options
       tsScriptAttr: 'lang="ts"', // Match attribute
